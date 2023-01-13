@@ -1,0 +1,50 @@
+{
+    "extends": "tslint:recommended",
+    "rules": {
+      "no-console": true,
+      "no-inferrable-types": false,
+      "arrow-parens": [true, "ban-single-arg-parens"],
+      "quotemark": [true, "single"],
+      "only-arrow-functions": true,
+      "no-namespace":false,
+      "semicolon": false,
+      "object-literal-sort-keys": false,
+      "no-bitwise":false,
+     
+      "ordered-imports": [
+        true,
+        {
+          "module-source-path": "full",
+          "grouped-imports": true,
+          "groups": [
+
+            {
+              "name": "internal modules",
+              "match": "^@app.*",
+              "order": 2
+            },
+            {
+              "name": "relative dir",
+              "match": "^[.].*",
+              "order": 3
+            },
+            {
+              "name": "node_modules",
+              "match": ".*",
+              "order": 1
+            }
+          ]
+        }
+      ]
+    },
+    "linterOptions": {
+      "exclude": ["**/*.js"],
+      "include": ["**/*.ts"]
+    },
+    "ordered-imports": [
+      true,
+      {
+        "module-source-path": "basename"
+      }
+    ]
+  }
